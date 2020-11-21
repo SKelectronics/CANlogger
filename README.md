@@ -1,5 +1,5 @@
 # CANlogger
-CAN Datalogger and GPS Laptimer
+CAN Datalogger, GPS Laptimer and OBD scanner
 
 YAMAHA - R1 (2015+) / R6 (2017+)
 
