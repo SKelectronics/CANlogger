@@ -13,8 +13,6 @@ other brands in progress :/
 - status led (system check)
 - 4 additional analog inputs (for e.g. front/rear suspension, afr-values, oil-temperature)
 - obd failure reading and dtc clearing
-
-
 - full datalog (GPSdata, rpm, wheelspeeds, temperatures, IMUdata(leanangle,...), tractioncontrols, ...)
 - GPS laptimer (sector times, best times, ideal times)
 - simple WIFI access to all your data
