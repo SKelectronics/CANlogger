@@ -12,7 +12,7 @@ other brands in progress :/
 - automatic track load (nearest track)
 - status led (system check)
 - 4 additional analog inputs (for e.g. front/rear suspension, afr-values, oil-temperature)
-- obd diagnostic trouble code (DTC) reading and clearing (and description of P0 codes)
+- obd diagnostic trouble code (DTC) reading and clearing (description of default codes)
 - full datalog (GPSdata, rpm, wheelspeeds, temperatures, IMUdata(leanangle,...), tractioncontrols, ...)
 - GPS laptimer (sector times, best times, ideal times)
 - simple WIFI access to all your data
