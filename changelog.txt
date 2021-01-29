@@ -1,0 +1,8 @@
+V1.0.3
+- aps/tps correction
+- background-image fix
+- cp0 only update
+- GPS infoline
+- connect/setup-image update
+- manual update
+- logstart with modebutton
