@@ -1,0 +1,5 @@
+1. open "1_loader.exe"
+2. in "1_loader.exe": open hex-file (e.g. YAMAHA.hex)
+3. open "2_reboot.exe"
+4. the firmware update takes about ~3seconds
+5. done :)
