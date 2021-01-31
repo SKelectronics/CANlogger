@@ -1,3 +1,7 @@
+V1.0.5
+- design update
+- OBDcheck at startup
+- delete folders/files
 V1.0.3
 - aps/tps correction
 - background-image fix
