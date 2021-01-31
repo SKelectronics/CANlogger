@@ -15,7 +15,7 @@ other brands in progress :/
 - 4 additional analog inputs (for e.g. front/rear suspension, afr-values, oil-temperature)
 - obd diagnostic trouble code (DTC) reading and clearing (description of default codes)
 - full csv-datalog (GPSdata, rpm, wheelspeeds, temperatures, IMUdata(leanangle,...), tractioncontrols, ...)
-- simple WIFI access to all your data
+- simple WIFI access to all your data (via webbrowser)
 - easy bikechange, just update the firmware (maybe connector change is necessary)
 - lightweight and small
 - easy installation, just 1 connector to your bike
