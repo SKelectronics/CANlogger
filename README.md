@@ -6,6 +6,7 @@ YAMAHA - R1 (2015+) / R6 (2017+)
 other brands in progress :/
 
 
+- Yamaha Dashboard is supported (like the Yamaha CCU)
 - 600MHz CPU with 32Gb internal memory
 - 10Hz Gps receiver (GPS+GLONASS)
 - Laptimer with preinstalled tracks (self customizeable)
