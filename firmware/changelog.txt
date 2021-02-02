@@ -1,3 +1,7 @@
+V1.1
+- extended file names
+- Dashboard support
+- logstart with modebutton removed
 V1.0.5
 - design update
 - OBDcheck at startup
