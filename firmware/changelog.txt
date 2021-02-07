@@ -1,3 +1,7 @@
+V1.1.2
+- changeable analogchannel names
+- design update (Options)
+- manual update
 V1.1
 - extended file names
 - Yamaha Dashboard support
