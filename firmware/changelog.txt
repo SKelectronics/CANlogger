@@ -1,20 +1,23 @@
+V1.1.3
+- updated options menu
+- added silent mode (Options)
 V1.1.2
 - changeable analogchannel names
-- design update (Options)
-- manual update
+- updated design (Options)
+- updated manual
 V1.1
 - extended file names
 - Yamaha Dashboard support
 - logstart with modebutton removed
 V1.0.5
-- design update
+- updated design
 - OBDcheck at startup
 - delete folders/files
 V1.0.3
 - aps/tps correction
 - background-image fix
-- cp0 only update
+- updated Laptimer (finish line only)
 - GPS infoline
-- connect/setup-image update
-- manual update
+- updated connect/setup-image
+- updated manual
 - logstart with modebutton
