@@ -1,23 +1,26 @@
+V1.1.4
+- updated: logheader names
+- updated: abs pressure [0...100%]
 V1.1.3
-- updated options menu
-- added silent mode (Options)
+- updated: options menu
+- added:   silent mode (Options)
 V1.1.2
-- changeable analogchannel names
-- updated design (Options)
-- updated manual
+- added:   changeable analogchannel names
+- updated: design (Options)
+- updated: manual
 V1.1
-- extended file names
-- Yamaha Dashboard support
-- logstart with modebutton removed
+- added:   extended file names
+- added:   Yamaha Dashboard support
+- removed: logstart with modebutton
 V1.0.5
-- updated design
-- OBDcheck at startup
-- delete folders/files
+- updated: design
+- added:   OBDcheck at startup
+- added:   delete folders/files
 V1.0.3
-- aps/tps correction
-- background-image fix
-- updated Laptimer (finish line only)
-- GPS infoline
-- updated connect/setup-image
-- updated manual
-- logstart with modebutton
+- bugfix:  aps/tps correction
+- bugfix:  background-image
+- updated: Laptimer (finish line only)
+- added:   GPS infoline
+- updated: connect/setup-image
+- updated: manual
+- added:   logstart with modebutton
