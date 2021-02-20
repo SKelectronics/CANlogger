@@ -1,3 +1,6 @@
+V1.1.5
+- updated: manual
+- updated: CAN silent for R6
 V1.1.4
 - updated: logheader names
 - updated: abs pressure [0...100%]
