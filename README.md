@@ -20,4 +20,4 @@ other brands in progress :/
 - full 50Hz csv-datalog (GPSdata, rpm, wheelspeeds, temperatures, IMUdata(leanangle,...), tractioncontrols, ...)
 - easy bikechange, just update the firmware (maybe connector change is necessary)
 - lightweight and small
-- chemical and temperature resistent case in IP67
+- chemical and temperature resistent case in IP68
