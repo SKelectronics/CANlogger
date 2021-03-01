@@ -1,3 +1,9 @@
+V1.2
+- updated: Options menu
+- added:   lograte (Options) [10...100Hz]
+- added:   Wifi password (Options)
+- added:   Wifi reset
+- updated: abs pressure [bar]
 V1.1.5
 - updated: manual
 - updated: CAN silent for R6
@@ -5,7 +11,7 @@ V1.1.4
 - updated: logheader names
 - updated: abs pressure [0...100%]
 V1.1.3
-- updated: options menu
+- updated: Options menu
 - added:   silent mode (Options)
 V1.1.2
 - added:   changeable analogchannel names
