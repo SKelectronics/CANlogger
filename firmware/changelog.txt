@@ -1,3 +1,6 @@
+V1.2.4
+- updated: manual
+- bugfix:  automatic log start
 V1.2.2
 - updated: some optimizations
 V1.2.1
