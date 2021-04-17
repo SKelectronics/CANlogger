@@ -6,12 +6,12 @@
   <DataValueSeparators>;</DataValueSeparators>
   <UseEuroDecimalFormat>False</UseEuroDecimalFormat>
   <FileLineMatchers>
-    <FileLineMatcher dataLineIndex="0" matchText="time[s];lap;lat;lon;heading;GPSspeed;voltage[V];input1;input2;input3;input4;" matchMode="Contains" ignoreCase="False" />
+    <FileLineMatcher dataLineIndex="0" matchText="time[s];lap;lat;lon;heading[deg];GPSspeed[Km/h];voltage[V];" matchMode="Contains" ignoreCase="False" />
   </FileLineMatchers>
   <Calculators>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
       <InputColumns>
-        <InputColumn>RPM</InputColumn>
+        <InputColumn>rpm</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>RPM interpolated</OutputColumn>
@@ -19,23 +19,15 @@
     </LinearInterpolator>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
       <InputColumns>
-        <InputColumn>GPSspeed</InputColumn>
+        <InputColumn>GPSspeed[Km/h]</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>Speed KPH</OutputColumn>
       </OutputColumns>
     </LinearInterpolator>
-    <SpeedConverter inputUnit="KPH" outputUnit="MPH">
-      <InputColumns>
-        <InputColumn>Speed KPH</InputColumn>
-      </InputColumns>
-      <OutputColumns>
-        <OutputColumn>Speed MPH</OutputColumn>
-      </OutputColumns>
-    </SpeedConverter>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
       <InputColumns>
-        <InputColumn>heading</InputColumn>
+        <InputColumn>heading[deg]</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>Heading</OutputColumn>
@@ -93,16 +85,6 @@
     </DeltaValueCalculator>
     <LapSummaryCalculator>
       <InputColumns>
-        <InputColumn>Speed MPH</InputColumn>
-      </InputColumns>
-      <OutputColumns>
-        <OutputColumn>Min Speed MPH</OutputColumn>
-        <OutputColumn>Max Speed MPH</OutputColumn>
-        <OutputColumn>Average Speed MPH</OutputColumn>
-      </OutputColumns>
-    </LapSummaryCalculator>
-    <LapSummaryCalculator>
-      <InputColumns>
         <InputColumn>Speed KPH</InputColumn>
       </InputColumns>
       <OutputColumns>
@@ -137,18 +119,10 @@
     </LinearInterpolator>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
       <InputColumns>
-        <InputColumn>TPS</InputColumn>
+        <InputColumn>tps[%]</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>TPS interpolated</OutputColumn>
-      </OutputColumns>
-    </LinearInterpolator>
-    <LinearInterpolator filterValues="False" standardDevCeiling="5">
-      <InputColumns>
-        <InputColumn>FSUSP</InputColumn>
-      </InputColumns>
-      <OutputColumns>
-        <OutputColumn>FSusp interpolated</OutputColumn>
       </OutputColumns>
     </LinearInterpolator>
     <AveragingCalculator parameter="0.3" mode="Simple" direction="Backwards and Forwards">
@@ -161,20 +135,12 @@
     </AveragingCalculator>
     <AveragingCalculator parameter="0.5" mode="Simple" direction="Backwards and Forwards">
       <InputColumns>
-        <InputColumn>slip%</InputColumn>
+        <InputColumn>slip[%]</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>slip</OutputColumn>
       </OutputColumns>
     </AveragingCalculator>
-    <LinearInterpolator filterValues="False" standardDevCeiling="5">
-      <InputColumns>
-        <InputColumn>TC[V]</InputColumn>
-      </InputColumns>
-      <OutputColumns>
-        <OutputColumn>TCvoltage</OutputColumn>
-      </OutputColumns>
-    </LinearInterpolator>
     <DegreesToCartesianConverter inputUnit="Degrees" outputUnit="Feet" algorithm="SphericalMercator">
       <InputColumns>
         <InputColumn>lon</InputColumn>
@@ -185,31 +151,90 @@
         <OutputColumn>y_gps</OutputColumn>
       </OutputColumns>
     </DegreesToCartesianConverter>
+    <LinearInterpolator filterValues="True" standardDevCeiling="40">
+      <InputColumns>
+        <InputColumn>lean[deg]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>leanangle</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>aps[%]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>APS interpolated</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Fsusp</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Fsusp interpolated</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Rsusp</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Rsusp interpolated</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>slip</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>slip interpolated</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <AveragingCalculator parameter="1" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>ect[C]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>water</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+    <AveragingCalculator parameter="1" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>oiltemp</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>oiltemp avg</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
   </Calculators>
   <ColumnMappings>
     <ColumnMapping inputColumnText="time[s]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
     <ColumnMapping inputColumnText="lap" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Lap Timing Inputs&gt;" dataType="Lap Indicator" />
-    <ColumnMapping inputColumnText="Speed MPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed (MPH)" />
     <ColumnMapping inputColumnText="Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed (KPH)" />
     <ColumnMapping inputColumnText="Heading" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Heading" />
     <ColumnMapping inputColumnText="GPS AccelGs" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Acceleration Gs" />
     <ColumnMapping inputColumnText="Acc_ Y interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Acc Gs" />
     <ColumnMapping inputColumnText="Acc_ X interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Lateral Gs" />
     <ColumnMapping inputColumnText="Acc_ Z interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Vertical Gs" />
-    <ColumnMapping inputColumnText="Min Speed MPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Min (MPH)" />
-    <ColumnMapping inputColumnText="Max Speed MPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Max (MPH)" />
-    <ColumnMapping inputColumnText="Average Speed MPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Avg (MPH)" />
     <ColumnMapping inputColumnText="Min Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Min (KPH)" />
     <ColumnMapping inputColumnText="Max Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Max (KPH)" />
     <ColumnMapping inputColumnText="Average Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Avg (KPH)" />
     <ColumnMapping inputColumnText="RPM interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine RPM" />
     <ColumnMapping inputColumnText="Gear average" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Gear" />
-    <ColumnMapping inputColumnText="TPS interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Throttle Position" />
     <ColumnMapping inputColumnText="FSusp interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Suspension" dataType="Suspension Position Combined Front" />
     <ColumnMapping inputColumnText="slip" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Torque" />
-    <ColumnMapping inputColumnText="TCvoltage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Voltage" />
     <ColumnMapping inputColumnText="x_gps" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Longitude / X Position (Feet)" />
     <ColumnMapping inputColumnText="y_gps" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Latitude / Y Position (Feet)" />
     <ColumnMapping inputColumnText="voltage[V]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Voltage" />
+    <ColumnMapping inputColumnText="leanangle" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Lean Angle" />
+    <ColumnMapping inputColumnText="TPS interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Secondary Throttle Position" />
+    <ColumnMapping inputColumnText="APS interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Throttle Position" />
+    <ColumnMapping inputColumnText="Fsusp interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Suspension" dataType="Damper Position Combined Front" />
+    <ColumnMapping inputColumnText="Rsusp interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Suspension" dataType="Damper Position Combined Rear" />
+    <ColumnMapping inputColumnText="iat[C]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Environment" dataType="Air Temperature (C)" />
+    <ColumnMapping inputColumnText="oiltemp avg" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine Oil Temperature (C)" />
+    <ColumnMapping inputColumnText="water" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Water Temperature (C)" />
+    <ColumnMapping inputColumnText="slip interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Wheel Speed Combined Rear (KPH)" />
   </ColumnMappings>
 </DataProfile>
