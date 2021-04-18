@@ -1,3 +1,7 @@
+V1.2.6
+- added:   add 10min standbytime after wifi activity
+- updated: lean-angle value
+- added:   lean-angle filter
 V1.2.4
 - updated: manual
 - bugfix:  automatic log start
