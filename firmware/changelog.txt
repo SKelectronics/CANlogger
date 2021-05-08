@@ -1,3 +1,7 @@
+V1.3.0
+- bugfix:  manual log start/stop (Yamaha Dashboard)
+- added:   support second CCU
+- added:   analog filter (Options)
 V1.2.7
 - added:   infobar (CAN, GPS, OBD)
 V1.2.6
