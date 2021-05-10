@@ -1,3 +1,6 @@
+V1.3.2
+- updated: GPS health check
+- added:   DataMonitor
 V1.3.0
 - bugfix:  manual log start/stop (Yamaha Dashboard)
 - added:   support second CCU
