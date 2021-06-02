@@ -1,3 +1,9 @@
+V1.3.4
+- updated: manual
+- updated: DataMonitor
+- updated: OBDcheck
+- updated: standby time >=0min (Options)
+- updated: GPS health check
 V1.3.2
 - updated: GPS health check
 - added:   DataMonitor
