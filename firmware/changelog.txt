@@ -1,3 +1,9 @@
+V1.3.6
+- added:   new gps-receiver supported
+- updated: shutdown time reduced (90->60min)
+V1.3.5
+- updated: default slip calculation
+- updated: log timeout reduced to 1min
 V1.3.4
 - updated: manual
 - updated: DataMonitor
