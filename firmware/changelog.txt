@@ -1,3 +1,6 @@
+V1.3.7
+- bugfix:  sometimes slow wifi speed
+- bugfix:  logstart at GPSfix
 V1.3.6
 - added:   new gps-receiver supported
 - updated: shutdown time reduced (90->60min)
