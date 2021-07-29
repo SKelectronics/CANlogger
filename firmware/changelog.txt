@@ -1,3 +1,10 @@
+V1.4.0
+- updated: some optimizations
+- added:   file sorting (newest above)
+- added:   Zt-3 CAN support (ID 0x7D0, 500Kbps, update 10ms)
+- added:   P1 DTC codes for OBDcheck
+- removed: data: SCerr
+- bugfix:  standby time <10min
 V1.3.7
 - bugfix:  sometimes slow wifi speed
 - bugfix:  logstart at GPSfix
