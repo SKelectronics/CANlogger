@@ -2,8 +2,7 @@
 CAN Datalogger, GPS Laptimer and OBD scanner (Sebastian.Kaspari83@gmail.com)
 
 YAMAHA - R1 (2015+) / R6 (2017+)
-
-other brands in progress :/
+BMW - S1000R / S1000RR
 
 
 - easy installation, just 1 connector to your bike
