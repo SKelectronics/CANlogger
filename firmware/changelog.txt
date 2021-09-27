@@ -1,3 +1,5 @@
+V1.4.2
+- updated: CAN-bus 29bit ready (HONDA)
 V1.4.1
 - updated: some optimizations
 - added:   GPS-receiver disconnect/connect now possible
