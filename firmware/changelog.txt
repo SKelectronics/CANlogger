@@ -1,4 +1,8 @@
+V1.4.3
+- updated: laptimer checkpoints
+- bugfix:  gps-receiver V2.0 runs on low speed
 V1.4.2
+- updated: internal code updates
 - updated: CAN-bus 29bit ready (HONDA)
 V1.4.1
 - updated: some optimizations
@@ -15,7 +19,7 @@ V1.3.7
 - bugfix:  sometimes slow wifi speed
 - bugfix:  logstart at GPSfix
 V1.3.6
-- added:   new gps-receiver supported
+- added:   new gps-receiver V2.0 supported
 - updated: shutdown time reduced (90->60min)
 V1.3.5
 - updated: default slip calculation
