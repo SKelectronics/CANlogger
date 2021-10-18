@@ -1,6 +1,6 @@
 V1.4.3
 - updated: laptimer checkpoints
-- bugfix:  gps-receiver V2.0 runs on low speed
+- bugfix:  gps-receiver V2.0 rare (re)init problem
 V1.4.2
 - updated: internal code updates
 - updated: CAN-bus 29bit ready (HONDA)
