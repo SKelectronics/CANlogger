@@ -2,6 +2,7 @@ V1.4.6
 - updated: laptimer bestlap verifying
 - updated: manual
 - updated: logheader names
+- updated: fastest code (O3)
 - added:   voltage values (Options)
 - added:   negative min/max(out) values (Options)
 V1.4.3
