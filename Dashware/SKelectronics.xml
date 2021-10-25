@@ -27,7 +27,7 @@
     </LinearInterpolator>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
       <InputColumns>
-        <InputColumn>heading[deg]</InputColumn>
+        <InputColumn>GPSheading[deg]</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>Heading</OutputColumn>
@@ -143,8 +143,8 @@
     </AveragingCalculator>
     <DegreesToCartesianConverter inputUnit="Degrees" outputUnit="Feet" algorithm="SphericalMercator">
       <InputColumns>
-        <InputColumn>lon</InputColumn>
-        <InputColumn>lat</InputColumn>
+        <InputColumn>GPSlon</InputColumn>
+        <InputColumn>GPSlat</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>x_gps</OutputColumn>
