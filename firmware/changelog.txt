@@ -1,92 +1,121 @@
-V1.4.7
+V1.5.0 (14.11.21)
+- updated: some optimizations
+- updated: logstart at GPSfix&GPSspeed OR frontwheel_speed
+- updated: internal GPS distance calculation
+
+V1.4.7 (27.10.21)
 - updated: GPS fix accuracy
-V1.4.6
+
+V1.4.6 (25.10.21)
 - updated: laptimer bestlap verifying
 - updated: manual
 - updated: logheader names
 - updated: fastest code (O3)
 - added:   voltage values (Options)
 - added:   negative min/max(out) values (Options)
-V1.4.3
+
+V1.4.3 (16.10.21)
 - updated: laptimer checkpoints
 - bugfix:  gps-receiver V2.0 rare (re)init problem
-V1.4.2
+
+V1.4.2 (27.09.21)
 - updated: internal code updates
 - updated: CAN-bus 29bit ready (HONDA)
-V1.4.1
+
+V1.4.1 (06.08.21)
 - updated: some optimizations
 - added:   GPS-receiver disconnect/connect now possible
 - removed: data: frontWrpm / rearWrpm
-V1.4.0
+
+V1.4.0 (30.07.21)
 - updated: some optimizations
 - added:   file sorting (newest above)
 - added:   Zt-3 CAN support (ID 0x7D0, 500Kbps, update 10ms)
 - added:   P1 DTC codes for OBDcheck
 - removed: data: SCerr
 - bugfix:  standby time <10min
-V1.3.7
+
+V1.3.7 (16.07.21)
 - bugfix:  sometimes slow wifi speed
 - bugfix:  logstart at GPSfix
-V1.3.6
+
+V1.3.6 (13.07.21)
 - added:   new gps-receiver V2.0 supported
 - updated: shutdown time reduced (90->60min)
-V1.3.5
+
+V1.3.5 (29.06.21)
 - updated: default slip calculation
 - updated: log timeout reduced to 1min
-V1.3.4
+
+V1.3.4 (02.06.21)
 - updated: manual
 - updated: DataMonitor
 - updated: OBDcheck
 - updated: standby time >=0min (Options)
 - updated: GPS health check
-V1.3.2
+
+V1.3.2 (10.05.21)
 - updated: GPS health check
 - added:   DataMonitor
-V1.3.0
+
+V1.3.0 (08.05.21)
 - bugfix:  manual log start/stop (Yamaha Dashboard)
 - added:   support second CCU
 - added:   analog filter (Options)
-V1.2.7
+
+V1.2.7 (30.04.21)
 - added:   infobar (CAN, GPS, OBD)
-V1.2.6
+
+V1.2.6 (18.04.21)
 - added:   add 10min standbytime after wifi activity
 - updated: lean-angle value
 - added:   lean-angle filter
-V1.2.4
+
+V1.2.4 (12.04.21)
 - updated: manual
 - bugfix:  automatic log start
-V1.2.2
+
+V1.2.2 (27.03.21)
 - updated: some optimizations
-V1.2.1
+
+V1.2.1 (09.03.21)
 - updated: calculation accuracy
-V1.2
+
+V1.2 (01.03.21)
 - updated: Options menu
 - added:   lograte (Options) [10...100Hz]
 - added:   Wifi password (Options)
 - added:   Wifi reset
 - updated: abs pressure [bar]
-V1.1.5
+
+V1.1.5 (20.02.21)
 - updated: manual
 - updated: CAN silent for R6
-V1.1.4
+
+V1.1.4 (13.02.21)
 - updated: logheader names
 - updated: abs pressure [0...100%]
-V1.1.3
+
+V1.1.3 (10.02.21)
 - updated: Options menu
 - added:   silent mode (Options)
-V1.1.2
+
+V1.1.2 (08.02.21)
 - added:   changeable analogchannel names
 - updated: design (Options)
 - updated: manual
-V1.1
+
+V1.1 (06.02.21)
 - added:   extended file names
 - added:   Yamaha Dashboard support
 - removed: logstart with modebutton
-V1.0.5
+
+V1.0.5 (31.01.21)
 - updated: design
 - added:   OBDcheck at startup
 - added:   delete folders/files
-V1.0.3
+
+V1.0.3 (29.01.21)
 - bugfix:  aps/tps correction
 - bugfix:  background-image
 - updated: Laptimer (finish line only)
