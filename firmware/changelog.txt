@@ -1,3 +1,6 @@
+V1.5.3 (21.11.21)
+- bugfix:  wrong font color on iOS devices
+
 V1.5.2 (19.11.21)
 - updated: infobar (besttime, idealtime, bestspeed, trackname)
 - updated: DataMonitor
