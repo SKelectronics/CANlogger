@@ -1,3 +1,12 @@
+V1.6.0 (28.11.21)
+- updated: infobar (battery/engine warnings)
+- updated: bootloader V1.07
+- updated: faster memory handling
+- updated: internal code updates
+- updated: CAN reading/writing optimized
+- added  : data: internaltemp[C] (internal CANlogger temperature)
+- bugfix : GPSdate was only available after GPSfix (GPS-receiver V2.0)
+
 V1.5.3 (21.11.21)
 - bugfix:  wrong font color on iOS devices
 
@@ -24,7 +33,7 @@ V1.4.6 (25.10.21)
 
 V1.4.3 (16.10.21)
 - updated: laptimer checkpoints
-- bugfix:  gps-receiver V2.0 rare (re)init problem
+- bugfix:  GPS-receiver V2.0 rare (re)init problem
 
 V1.4.2 (27.09.21)
 - updated: internal code updates
@@ -48,7 +57,7 @@ V1.3.7 (16.07.21)
 - bugfix:  logstart at GPSfix
 
 V1.3.6 (13.07.21)
-- added:   new gps-receiver V2.0 supported
+- added:   new GPS-receiver V2.0 supported
 - updated: shutdown time reduced (90->60min)
 
 V1.3.5 (29.06.21)
