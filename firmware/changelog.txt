@@ -1,3 +1,8 @@
+V1.6.2 (12.12.21)
+- updated: OBDcheck supports now more than 9 messages
+- updated: changed baud rates for GPS-receivers 9.6->57.6 kb/s
+- updated: better GPS-receiver performance
+
 V1.6.0 (28.11.21)
 - updated: infobar (battery/engine warnings)
 - updated: bootloader V1.07
