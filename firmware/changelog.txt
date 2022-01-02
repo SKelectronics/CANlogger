@@ -1,3 +1,7 @@
+V1.6.3 (02.01.22)
+- updated: filenames format in date_time.csv
+- updated: better GPS-receiver performance
+
 V1.6.2 (12.12.21)
 - updated: OBDcheck supports now more than 9 messages
 - updated: changed baud rates for GPS-receivers 9.6->57.6 kb/s
