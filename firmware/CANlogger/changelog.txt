@@ -1,3 +1,13 @@
+V1.8.1 (10.07.23)
+- updated: internal code updates
+- bugfix : slip calculation without IMU (YZF-R6)
+BMW:
+- added  : lap trigger signal for new Dashboards
+- added  : IMU data yaw and pitch
+- updated: OBD reading newer models
+- bugfix : unwanted logstart newer models
+- bugfix : abs brake pressure too low [bar]
+
 V1.8.0 (05.03.23)
 - updated: fast WiFi connect
 - updated: memory speed increased
