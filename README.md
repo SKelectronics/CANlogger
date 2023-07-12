@@ -11,7 +11,7 @@ BMW - S1000R / S1000RR
 
 - easy installation, just 1 connector to your bike
 - simple WIFI access to all your data (via webbrowser)
-- Yamaha Dashboard is supported (like the Yamaha CCU)
+- Yamaha/BMW Dashboard is supported (all laptimes and some data)
 - 10Hz Gps receiver (GPS+GLONASS)
 - Laptimer with preinstalled tracks (self customizeable)
 - GPS laptimer (sector times, best times, ideal times)
