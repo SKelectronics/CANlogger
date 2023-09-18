@@ -6,7 +6,7 @@
   <DataValueSeparators>;</DataValueSeparators>
   <UseEuroDecimalFormat>False</UseEuroDecimalFormat>
   <FileLineMatchers>
-    <FileLineMatcher dataLineIndex="0" matchText="time[s];lap;lat;lon;heading[deg];GPSspeed[Km/h];voltage[V];" matchMode="Contains" ignoreCase="False" />
+    <FileLineMatcher dataLineIndex="0" matchText="time[s];lap;GPSlat;GPSlon;GPSheading[deg];GPSspeed[Km/h];voltage[V];" matchMode="Contains" ignoreCase="False" />
   </FileLineMatchers>
   <Calculators>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
