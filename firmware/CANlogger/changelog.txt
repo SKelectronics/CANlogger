@@ -1,0 +1,222 @@
+V1.8.4 (12.11.23)
+- added  : NO_CAN support (separate firmware)
+- added  : additional rpm channel (NO_CAN firmware, HW1.6)
+- added  : check for bad GPS accuracy
+- added  : min speed for checkpoints
+- added  : auto summer time (edit in track files)
+- added  : auto update track files
+- bugfix : ABS modul logging sometimes turned off
+
+V1.8.3 (18.09.23)
+- added  : ABS modul auto detect, changeable in Options, log data when activated
+- added  : highpass filter for oiltemp sensor (filter 10)
+- added  : log-foldernames format and timefile format in date_trackname
+- updated: internal code updates
+- updated: internaltemp renamed to logger_temp
+- updated: skip logging unused data (A1-A8, abs brake pressure, bike settings)
+- updated: manual
+- updated: DataMonitor (show only used data)
+- removed: logging handlebar buttons (up/down/mode)
+BMW:
+- added  : logging bike settings
+- added  : logging rear suspension sensor
+- added  : logging oiltemp sensor
+- added  : logging lcs_act (number of launches left)
+- bugfix : tc_act/lif_act mixed-up
+
+V1.8.1 (10.07.23)
+- updated: internal code updates
+- bugfix : slip calculation without IMU (YZF-R6)
+BMW:
+- added  : lap trigger signal for new Dashboards
+- added  : IMU data yaw and pitch
+- updated: OBD reading newer models
+- bugfix : unwanted logstart newer models
+- bugfix : abs brake pressure too low [bar]
+
+V1.8.0 (05.03.23)
+- updated: fast WiFi connect
+- updated: memory speed increased
+- updated: infobar (memory warning at <4GB and <2GB free space)
+- updated: html heads with title+favicon
+- updated: html design
+- updated: manual
+- added  : changelog.txt
+- added  : tooltips for infobar icons and Options
+- added  : check/repair corrupted logfiles
+- added  : stop logging when turning ignition off
+- added  : launch control activation starts logging
+
+V1.7.2 (30.10.22)
+- updated: filesystem optimized (smaller file size)
+- updated: memory handling
+BMW:
+- added  : Dashboard laptrigger signal
+- bugfix : rpm fix for HP4 and older models
+
+V1.7.0 (11.05.22)
+- added  : CANextender module support
+- added  : second GPS-receiver support (laptiming, DataMonitor, logging)
+- added  : IRsensor support (DataMonitor, logging)
+- updated: infobar (second GPS, Zt-3, CANextender module)
+- updated: Options (CANextender Data)
+- updated: manual
+- updated: DataMonitor (2 GPS-receivers, analog inputs, IRsensors)
+- updated: load track only when in near (<1000m)
+- updated: GPS-receiver V2.0 accuracy
+- removed: status bar (Batt voltage and analog values on bottom screen)
+- removed: cansilent (Options)
+BMW:
+- bugfix : leanangle too low
+
+V1.6.3 (02.01.22)
+- updated: filenames format in date_time.csv
+- updated: better GPS-receiver performance
+
+V1.6.2 (12.12.21)
+- updated: OBDcheck supports now more than 9 messages
+- updated: changed baud rates for GPS-receivers 9.6->57.6 kb/s
+- updated: better GPS-receiver performance
+
+V1.6.0 (28.11.21)
+- updated: infobar (battery/engine warnings)
+- updated: bootloader V1.07
+- updated: faster memory handling
+- updated: internal code updates
+- updated: CAN reading/writing optimized
+- added  : data: internaltemp[C] (internal CANlogger temperature)
+- bugfix : GPSdate was only available after GPSfix (GPS-receiver V2.0)
+
+V1.5.3 (21.11.21)
+- bugfix:  wrong font color on iOS devices
+
+V1.5.2 (19.11.21)
+- updated: infobar (besttime, idealtime, bestspeed, trackname)
+- updated: DataMonitor
+- bugfix:  some incorrect track files (update all files!)
+
+V1.5.0 (14.11.21)
+- updated: some optimizations
+- updated: logstart at GPSfix&GPSspeed OR frontwheel_speed
+- updated: internal GPS distance calculation
+
+V1.4.7 (27.10.21)
+- updated: GPS fix accuracy
+
+V1.4.6 (25.10.21)
+- updated: laptimer bestlap verifying
+- updated: manual
+- updated: logheader names
+- updated: fastest code (O3)
+- added:   voltage values (Options)
+- added:   negative min/max(out) values (Options)
+
+V1.4.3 (16.10.21)
+- updated: laptimer checkpoints
+- bugfix:  GPS-receiver V2.0 rare (re)init problem
+
+V1.4.2 (27.09.21)
+- updated: internal code updates
+- updated: CAN-bus 29bit ready (HONDA)
+
+V1.4.1 (06.08.21)
+- updated: some optimizations
+- added:   GPS-receiver disconnect/connect now possible
+- removed: logging frontWrpm / rearWrpm
+
+V1.4.0 (30.07.21)
+- updated: some optimizations
+- added:   file sorting (newest above)
+- added:   Zt-3 CAN support (ID 0x7D0, 500Kbps, update 10ms)
+- added:   P1 DTC codes for OBDcheck
+- removed: logging SCerr
+- bugfix:  standby time <10min
+
+V1.3.7 (16.07.21)
+- bugfix:  sometimes slow wifi speed
+- bugfix:  logstart at GPSfix
+
+V1.3.6 (13.07.21)
+- added:   new GPS-receiver V2.0 supported
+- updated: shutdown time reduced (90->60min)
+
+V1.3.5 (29.06.21)
+- updated: default slip calculation
+- updated: log timeout reduced to 1min
+
+V1.3.4 (02.06.21)
+- updated: manual
+- updated: DataMonitor
+- updated: OBDcheck
+- updated: standby time >=0min (Options)
+- updated: GPS health check
+
+V1.3.2 (10.05.21)
+- updated: GPS health check
+- added:   DataMonitor
+
+V1.3.0 (08.05.21)
+- bugfix:  manual log start/stop (Yamaha Dashboard)
+- added:   support second CCU
+- added:   analog filter (Options)
+
+V1.2.7 (30.04.21)
+- added:   infobar (CAN, GPS, OBD)
+
+V1.2.6 (18.04.21)
+- added:   add 10min standbytime after wifi activity
+- updated: lean-angle value
+- added:   lean-angle filter
+
+V1.2.4 (12.04.21)
+- updated: manual
+- bugfix:  automatic log start
+
+V1.2.2 (27.03.21)
+- updated: some optimizations
+
+V1.2.1 (09.03.21)
+- updated: calculation accuracy
+
+V1.2 (01.03.21)
+- updated: Options menu
+- added:   lograte (Options) [10...100Hz]
+- added:   Wifi password (Options)
+- added:   Wifi reset
+- updated: abs pressure [bar]
+
+V1.1.5 (20.02.21)
+- updated: manual
+- updated: CAN silent for R6
+
+V1.1.4 (13.02.21)
+- updated: logheader names
+- updated: abs pressure [0...100%]
+
+V1.1.3 (10.02.21)
+- updated: Options menu
+- added:   silent mode (Options)
+
+V1.1.2 (08.02.21)
+- added:   changeable analogchannel names
+- updated: design (Options)
+- updated: manual
+
+V1.1 (06.02.21)
+- added:   extended file names
+- added:   Yamaha Dashboard support
+- removed: logstart with modebutton
+
+V1.0.5 (31.01.21)
+- updated: design
+- added:   OBDcheck at startup
+- added:   delete folders/files
+
+V1.0.3 (29.01.21)
+- bugfix:  aps/tps correction
+- bugfix:  background-image
+- updated: Laptimer (finish line only)
+- added:   GPS infoline
+- updated: connect/setup-image
+- updated: manual
+- added:   logstart with modebutton
