@@ -1,3 +1,9 @@
+V1.8.5 (22.01.24)
+- added  : Yamaha R7 support
+- added  : WiFi-name changeable in Options
+- updated: summertime @ GPSprefix
+- bugfix : track Calafat with wrong timezone
+
 V1.8.4 (12.11.23)
 - added  : NO_CAN support (separate firmware)
 - added  : additional rpm channel (NO_CAN firmware, HW1.6)
