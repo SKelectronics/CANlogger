@@ -1,3 +1,7 @@
+V1.8.6 (08.04.24)
+- added  : GPS-receiver V4.0 support
+- updated: internal code updates
+
 V1.8.5 (22.01.24)
 - added  : Yamaha R7 support
 - added  : WiFi-name changeable in Options
