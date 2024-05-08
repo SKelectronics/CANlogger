@@ -1,3 +1,7 @@
+V1.8.7 (09.05.24)
+- updated: WiFi-name: spaces possible
+- bugfix : Trackfiles could not be readed
+
 V1.8.6 (08.04.24)
 - added  : GPS-receiver V4.0 support
 - updated: internal code updates

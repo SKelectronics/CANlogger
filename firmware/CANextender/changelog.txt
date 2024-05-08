@@ -1,0 +1,6 @@
+V1.0.0 (11.05.22)
+- added  : inputs (4xanalog, 8xIR-sensors, 1xGPS-receiver)
+- added  : can-message 0x7D1 100hz (4xanalog, GPSstatus, EXTstatus, version)
+- added  : can-message 0x7D2 2hz (8xIR-sensors)
+- added  : can-message 0x7D3 10hz (GPSlat, GPSlon)
+- added  : dynamic can-messages (7D2/7D3 only send when needed or as long as needed)

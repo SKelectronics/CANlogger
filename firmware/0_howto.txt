@@ -2,5 +2,5 @@
 2. connect CANlogger via USB
 3. open "1_loader.exe"
 4. in "1_loader.exe": open hex-file (e.g. YAMAHA.hex)
-5. open "2_reboot.exe"
+5. open "2_upload.exe"
 6. the firmware update takes about ~3seconds, done :)
