@@ -1,4 +1,8 @@
-V1.8.9 (10.11.2024)
+V2.0.0 (21.05.25)
+- added  : all in one firmware, auto pick model (Yamaha, BMW, Ducati, NoCAN-mode)
+- updated: memory handling
+
+V1.8.9 (10.11.24)
 - added  : logstart by WiFi/menu
 - updated: better file sorting
 - bugfix : missing chars in long WiFi-names
