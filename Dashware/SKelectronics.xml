@@ -1,0 +1,267 @@
+<DataProfile version="2" readOnly="False" startFinishDistanceThreshold="40" showDistanceThreshold="True" ignoreFirstLap="True" ignoreLastLap="True" lapTimeHoldSecs="5" isChaseCamData="False" isAimData="False" isDriftBoxData="False" sortByTime="False" autoSync="False" autoSyncOffset="0">
+  <HeaderLines>
+    <HeaderLineIndex>0</HeaderLineIndex>
+  </HeaderLines>
+  <DataStartLineIndex>1</DataStartLineIndex>
+  <DataValueSeparators>;</DataValueSeparators>
+  <UseEuroDecimalFormat>False</UseEuroDecimalFormat>
+  <FileLineMatchers>
+    <FileLineMatcher dataLineIndex="0" matchText="time[s];lap;GPSlat;GPSlon;GPSheading[deg];GPSspeed[Km/h];voltage[V];" matchMode="Contains" ignoreCase="False" />
+  </FileLineMatchers>
+  <Calculators>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>rpm</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>RPM intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>GPSspeed[Km/h]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Speed KPH</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>GPSheading[deg]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Heading</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <GPSAccelerationCalculator inputUnit="KPH">
+      <InputColumns>
+        <InputColumn>Speed KPH</InputColumn>
+        <InputColumn>Heading</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Raw GPS AccelGs</OutputColumn>
+        <OutputColumn>Raw GPS LatGs</OutputColumn>
+      </OutputColumns>
+    </GPSAccelerationCalculator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Raw GPS AccelGs</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Interp GPS AccelGs</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Raw GPS LatGs</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Interp GPS LatGs</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <AveragingCalculator parameter="0.15" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>Interp GPS AccelGs</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>GPS AccelGs</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+    <AveragingCalculator parameter="0.15" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>Interp GPS LatGs</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>GPS LatGs</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+    <DeltaValueCalculator>
+      <InputColumns>
+        <InputColumn>time[s]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Delta Time</OutputColumn>
+      </OutputColumns>
+    </DeltaValueCalculator>
+    <LapSummaryCalculator>
+      <InputColumns>
+        <InputColumn>Speed KPH</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Min Speed KPH</OutputColumn>
+        <OutputColumn>Max Speed KPH</OutputColumn>
+        <OutputColumn>Average Speed KPH</OutputColumn>
+      </OutputColumns>
+    </LapSummaryCalculator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Acc_ Y</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Acc_ Y interpolated</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Acc_ X</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Acc_ X interpolated</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Acc_ Z</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Acc_ Z interpolated</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>tps[%]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>TPS intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>aps[%]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>APS intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <AveragingCalculator parameter="0.1" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>gear</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Gear avg</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+    <AveragingCalculator parameter="0.5" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>slip[%]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>slip avg</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+    <DegreesToCartesianConverter inputUnit="Degrees" outputUnit="Feet" algorithm="SphericalMercator">
+      <InputColumns>
+        <InputColumn>GPSlon</InputColumn>
+        <InputColumn>GPSlat</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>x_gps</OutputColumn>
+        <OutputColumn>y_gps</OutputColumn>
+      </OutputColumns>
+    </DegreesToCartesianConverter>
+    <LinearInterpolator filterValues="False" standardDevCeiling="40">
+      <InputColumns>
+        <InputColumn>lean[deg]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>lean intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Fsusp</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Fsusp intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>Rsusp</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Rsusp intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>slip</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>slip intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <AveragingCalculator parameter="1" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>ect[C]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>water avg</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+    <AveragingCalculator parameter="1" mode="Simple" direction="Backwards and Forwards">
+      <InputColumns>
+        <InputColumn>oiltemp[C]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>oiltemp avg</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>fbpa[bar]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>fbpa intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>rbpa[bar]</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>rbpa intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>tcs_act</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>tcs_act intp</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+  </Calculators>
+  <ColumnMappings>
+    <ColumnMapping inputColumnText="time[s]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
+    <ColumnMapping inputColumnText="lap" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Lap Timing Inputs&gt;" dataType="Lap Indicator" />
+    <ColumnMapping inputColumnText="RPM intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine RPM" />
+    <ColumnMapping inputColumnText="Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed (KPH)" />
+    <ColumnMapping inputColumnText="Heading" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Heading" />
+    <ColumnMapping inputColumnText="GPS AccelGs" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Acceleration Gs" />
+    <ColumnMapping inputColumnText="Acc_ Y interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Acc Gs" />
+    <ColumnMapping inputColumnText="Acc_ X interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Lateral Gs" />
+    <ColumnMapping inputColumnText="Acc_ Z interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="G-Forces" dataType="Vertical Gs" />
+    <ColumnMapping inputColumnText="Min Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Min (KPH)" />
+    <ColumnMapping inputColumnText="Max Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Max (KPH)" />
+    <ColumnMapping inputColumnText="Average Speed KPH" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed Lap Avg (KPH)" />
+    <ColumnMapping inputColumnText="Gear avg" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Gear" />
+    <ColumnMapping inputColumnText="FSusp interpolated" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Suspension" dataType="Suspension Position Combined Front" />
+    <ColumnMapping inputColumnText="slip avg" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Wheel Speed Combined All (KPH)" />
+    <ColumnMapping inputColumnText="x_gps" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Longitude / X Position (Feet)" />
+    <ColumnMapping inputColumnText="y_gps" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Latitude / Y Position (Feet)" />
+    <ColumnMapping inputColumnText="voltage[V]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Voltage" />
+    <ColumnMapping inputColumnText="lean intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Lean Angle" />
+    <ColumnMapping inputColumnText="TPS intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Secondary Throttle Position" />
+    <ColumnMapping inputColumnText="APS intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Throttle Position" />
+    <ColumnMapping inputColumnText="Fsusp intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Suspension" dataType="Damper Position Combined Front" />
+    <ColumnMapping inputColumnText="Rsusp intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Suspension" dataType="Damper Position Combined Rear" />
+    <ColumnMapping inputColumnText="iat[C]" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Environment" dataType="Air Temperature (C)" />
+    <ColumnMapping inputColumnText="oiltemp avg" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine Oil Temperature (C)" />
+    <ColumnMapping inputColumnText="water avg" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Water Temperature (C)" />
+    <ColumnMapping inputColumnText="slip intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Wheel Speed Combined Rear (KPH)" />
+    <ColumnMapping inputColumnText="fbpa intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Brake Pressure Combined Front" />
+    <ColumnMapping inputColumnText="rbpa intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Brake Pressure Combined Rear" />
+    <ColumnMapping inputColumnText="tcs_act intp" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine Load" />
+  </ColumnMappings>
+</DataProfile>
