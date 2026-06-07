@@ -1,3 +1,8 @@
+V2.0.3 (07.06.26)
+- added  : Yamaha R9 support
+- added  : track overview in laptime-files (sectors, trackmap)
+- updated: internal code updates (V1.61)
+
 V2.0.2 (22.08.25)
 - bugfix : GPSdate fix
 
@@ -26,7 +31,7 @@ V1.8.7 (09.05.24)
 
 V1.8.6 (08.04.24)
 - added  : GPS-receiver V4.0 support
-- updated: internal code updates
+- updated: internal code updates (V1.59)
 
 V1.8.5 (22.01.24)
 - added  : Yamaha R7 support
@@ -61,7 +66,7 @@ BMW:
 - bugfix : tc_act/lif_act mixed-up
 
 V1.8.1 (10.07.23)
-- updated: internal code updates
+- updated: internal code updates (V1.58)
 - bugfix : slip calculation without IMU (YZF-R6)
 BMW:
 - added  : lap trigger signal for new Dashboards
@@ -118,7 +123,7 @@ V1.6.0 (28.11.21)
 - updated: infobar (battery/engine warnings)
 - updated: bootloader V1.07
 - updated: faster memory handling
-- updated: internal code updates
+- updated: internal code updates (V1.56)
 - updated: CAN reading/writing optimized
 - added  : data: internaltemp[C] (internal CANlogger temperature)
 - bugfix : GPSdate was only available after GPSfix (GPS-receiver V2.0)
